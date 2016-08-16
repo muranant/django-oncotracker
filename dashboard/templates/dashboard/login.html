@@ -1,0 +1,15 @@
+ {% extends 'dashboard/navbar.html' %} 
+ 
+ {% block content %}
+<form class="form-signin" id="login_form" method="post" action="/dashboard/login/">
+	{% csrf_token %} 
+	<div class="form-group"/>
+	<input type="text" name="username" value="" size="25" class="form-control light" autofocus placeholder="Username"   />
+		 <br /> 
+		 <input type="password" name="password" value="" size="25" class="form-control light" placeholder="Password" /> 
+		 <br/> 
+		   </div>
+            <button id="login" style="height: 45px; width: 600px; border-radius: 0 !important;" class="btn btn-login btn-block" type="submit">
+                <div style="font-weight: lighter; font-size: 20px; color: white">Log in</div></button>
+</form>
+{% endblock %}

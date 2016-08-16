@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="no-js">
+{% load static %}
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+
+<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container-fluid"
+	style="background-color: #C0C5C5; color: #fff; height: 200px;">
+	<h1>Onco Tracker</h1>
+	<p>This gives information about ongoing treatments and ability to
+		track progress over the treatment duration.</p>
+</div>
+<br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3">
+			<ul id="left" class="nav nav-pills nav-stacked" data-spy="affix"
+				data-offset-top="105">
+				{% block sidebar %}
+				{% endblock %}
+			</ul>
+		</div>
+	<div class="col-sm-9">
+	{% block content %}
+	{% endblock %}
+	</div>
+
+
+	</div>
+</div>
+<hr>
+<div class="container-fluid">
+	<footer>
+		<p>&copy; Murali Anantha 2016</p>
+	</footer>
+</div>
+
+<!-- /container -->
+</body>
+</html>

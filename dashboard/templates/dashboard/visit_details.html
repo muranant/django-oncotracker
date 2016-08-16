@@ -1,0 +1,34 @@
+{% extends 'dashboard/navbar.html' %} 
+
+			
+{% block sidebar %}
+<li active="true"> <a href="/visits">Visits</a></li>
+<li><a href="/analysis">Data Analysis</a></li>
+<li><a href="/contact">Contact</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+	{% if visits %}
+			<table class="table">
+				<thead class="thread-inverse">
+					<tr>
+						<th>Date of Visit</th>
+						<th>Place </th>
+					</tr>
+				</thead>
+				<tbody>
+						{% for visit in visits %}
+					<tr>
+						<th><a href="?date={{ visit.visit_time }}">{{ visit.visit_time}}</a></th>
+						<th>{{ visit.type_of_visit}}</th> 
+					</tr>
+						{% endfor %}
+					</tbody>
+					</table>
+					{% else %}
+					<strong>There are no visits</strong> 
+					{% endif %}
+
+{% endblock %}
